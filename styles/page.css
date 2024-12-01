@@ -1,0 +1,124 @@
+main.home {
+	height: 100dvh;
+	box-sizing: border-box;
+	background-color: var(--ternary-background-color);
+	overflow-y: hidden;
+    column-gap: 0em !important;
+}
+
+main.home > section {
+	box-sizing: border-box;
+	padding: 1.25em;
+}
+
+main.home > section:nth-child(1) {
+    padding-top: 2em;
+	height: 100dvh;
+	position: sticky;
+	top: 0;
+	left: 0;
+	border-right: var(--ternary-background-color) solid 2px;
+}
+main.home > section:nth-child(1) > * {
+	border-radius: 0.6em;
+}
+
+main.home > section:nth-child(2) {
+	padding: 2em !important;
+	margin: .8em .8em .8em 0;
+	height: calc(100dvh - 1.6em);
+	overflow-y: scroll;
+	background-color: var(--primary-background-color);
+	border-radius: 1em;
+    border: 1px solid var(--shadow-outline-color);
+}
+
+.navigation-list {
+	list-style: none;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+.navigation-list > li {
+    width: 12em;
+}
+.navigation-list > li > a {
+	opacity: 0.6;
+	font-size: 0.9em !important;
+	color: var(--text-color) !important;
+	text-decoration: none;
+	padding: .6em !important;
+    border-radius: .4em !important;
+
+	transition-property: opacity, font-weight, background-color;
+    transition-duration: 87ms;
+    transition-timing-function: ease-out;
+}
+.navigation-list > li > a:hover {
+	opacity: 1;
+}
+.navigation-list > li > a > .wrapper-only {
+	flex: unset;
+}
+.navigation-list > li > a svg {
+	stroke-width: 1;
+}
+
+.more-anchor {
+	text-decoration: none;
+	color: var(--accent-color);
+	font-weight: 600;
+	font-size: 0.9em;
+	padding: 0em;
+}
+.more-anchor:hover {
+	color: var(--accent-color-hover);
+}
+
+@media (max-width: 540px) {
+	main.home {
+		flex-direction: column-reverse !important;
+        gap: 0em !important;
+	}
+	main.home > section:nth-child(1) {
+		background-color: var(--primary-background-color);
+        padding: 1em;
+		margin: 0 !important;
+		border: 0 !important;
+		border-radius: 0 !important;
+        border-top: 1px solid var(--shadow-outline-color) !important;
+	}
+	main.home > section:nth-child(1) > *:not(.navigation-list) {
+		display: none;
+	}
+	main.home > section:nth-child(1) .navigation-list {
+		flex-direction: row !important;
+		gap: .4em !important;
+		justify-content: space-evenly !important;
+	}
+	main.home > section:nth-child(1) .navigation-list > li {
+		height: 100% !important;
+		aspect-ratio: 1 / 1;
+	}
+    main.home > section:nth-child(1) .navigation-list .space-filler {
+        display: none !important;
+    }
+	main.home > section:nth-child(1) .navigation-list > li > a {
+		flex-direction: column !important;
+        gap: .4em !important;
+        justify-content: center !important;
+        box-shadow: none !important;
+	}
+    main.home > section:nth-child(1) .navigation-list > li > a svg {
+        width: 2em !important;
+        height: 2em !important;
+    }
+	main.home > section:nth-child(2) {
+		margin: 0 !important;
+		border: 0 !important;
+		border-radius: 0 !important;
+	}
+
+    .navigation-list > li {
+        width: auto;
+    }
+}

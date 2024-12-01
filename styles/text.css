@@ -1,0 +1,12 @@
+.subtext {
+	color: var(--separator-color);
+}
+
+.normal-h6 h6,
+.normal-h6 {
+	font-weight: 600 !important;
+}
+
+.small-size {
+	font-size: 0.9em !important;
+}
